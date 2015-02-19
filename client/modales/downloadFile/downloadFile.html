@@ -1,0 +1,27 @@
+<template name="downloadFile">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Filter File Example Code</h4>
+                </div>
+
+                <div class="modal-body">
+                    {{#markdown}}{{> codeDownload}}{{/markdown}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="codeDownload">
+  This Works Thanks to Simple **HTML**.
+   [Check this link] (test)
+</template>
+

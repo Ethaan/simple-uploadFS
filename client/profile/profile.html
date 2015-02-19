@@ -1,0 +1,30 @@
+<template name="profile">
+	<!-- Here We check if the user is online-->
+	{{#if currentUser}}
+	<h1> This is a just a simple demostration about how FScollection, upload and deny certain types of files</h1>
+	<!-- Here We check if the user upload an image {{showInputProfile}} line 46. profile.js -->
+	{{#if showInputProfile}}
+	       This input only accepts PDFS Files.
+           <input type="file" id="inputPdf"> <div id="showModalFilter"><a href="#">How this Works? </a></div>
+           Images Files(Any kind of file can be upload here).
+           <input type="file" id="inputPng"><div id="showModalUpload"><a href="#">How this Works? </a></div>
+    <!-- Here We show the Images uploaded by the user {{showImagesUploadByUser}} line 54. profile.js -->
+    <h2>Images Section </h2>
+    {{#each showImagesUploadByUser}}
+       {{> image}}
+    {{/each}}
+    <h2>PDFs Section </h2>
+    {{#each showPDFUploadByUser}}
+       {{> pdfTemplate}}
+    {{/each}}
+	{{else}}
+          <span>Upload a profile image to continue.</span>
+          <input type="file" id="profileImage"><div id="showModalUpload"><a href="#">How this Works? </a></div>
+    {{/if}}
+{{else}}
+<span> This Template its only Accessible when you already have an account </span>
+{{/if}}
+</template>
+
+
+

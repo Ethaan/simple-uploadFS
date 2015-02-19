@@ -1,0 +1,111 @@
+<template name="uploadFile">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Upload File Example Code</h4>
+                </div>
+
+                <div class="modal-body">
+                    {{#markdown}}{{> codeUpload}}{{/markdown}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="codeUpload">
+
+ **First the Simple HTML**<br>
+    <pre><code><input type="file" id="exampleInput">
+</code></pre>
+
+**Now the Js**<br>
+ The first thing you should do its create the Collection inside the follow directory.
+
+  <pre><code>appName/lib/collections.js</code></pre><br>
+  Second create the FS.Collection.
+  <pre><code>
+  PostsImages = new FS.Collection("PostsImages", {<br>
+       stores: [new FS.Store.GridFS("PostsImages")]<br>
+});
+
+if(Meteor.isClient){<br>
+    Meteor.subscrie('PostImages')<br>
+}
+
+</code></pre><br>
+
+**NOTE** We declare/subscribe on the /lib server since Meteor loads first this folder
+So collections will be avaible on both client/server.
+
+Now on the Server Code write this.
+
+<pre><code>appName/server/common.js</code></pre><br>
+  Make the allow/denys Method here.
+  <pre><code>
+   PostsImages.allow({<br>
+     insert:function(){return true;},<br>
+     remove:function(){return true;},<br>
+     update:function(){return true;},<br>
+     download:function(){return true;}<br>
+ })<br>
+
+ //Publish Method.<br>
+ Meteor.publish('PostsImages',function(){<br>
+ return PostsImages.find()<br>
+})<br>
+
+</code></pre><br>
+
+And to Finish this little snipe, lets create a new Event.handler
+<pre><code><br>
+Template.example.events({<br>
+    'change #exampleInput':function(){<br>
+      var file =  $('#uploadImagePost').get(0).files[0] //Some jQuery to get the value.<br>
+           fsFile = new FS.File(file);<br>
+           fsFile.metadata = {coolText:"coolText"} //FS.File support metadata.<br>
+      PostsImages.insert(fsFile,function(err,result){<br>
+          if(!err){<br>
+             console.log(result) //you should get an id here since the full object take more less 10 sec to upload<br>
+           }<br>
+       })<br>
+    }<br>
+})<br>
+</code></pre><br>
+With this now you are able to insert some nice FileObjects into The Project.
+
+Dont Forget Read the [Documentation on GitHub](https://github.com/CollectionFS/Meteor-CollectionFS#getting-started)
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

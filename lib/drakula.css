@@ -1,0 +1,206 @@
+
+/* Tomorrow Night Eighties Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Edited by Ayman Farhat(http://aymanfarhat.com) for supporting inline code tags without pre */
+.tomorrow-comment, code .comment, code .title {
+  color: #999999;
+}
+ 
+.tomorrow-red, code .variable, code .attribute, code .tag, code .regexp, code .ruby .constant, code .xml .tag .title, code .xml .pi, code .xml .doctype, code .html .doctype, code .css .id, code .css .class, code .css .pseudo {
+  color: #f2777a;
+}
+ 
+.tomorrow-orange, code .number, code .codeprocessor, code .built_in, code .literal, code .params, code .constant {
+  color: #f99157;
+}
+ 
+.tomorrow-yellow, code .ruby .class .title, code .css .rules .attribute {
+  color: #ffcc66;
+}
+ 
+.tomorrow-green, code .string, code .value, code .inheritance, code .header, code .ruby .symbol, code .xml .cdata {
+  color: #99cc99;
+}
+ 
+.tomorrow-aqua, code .css .hexcolor {
+  color: #66cccc;
+}
+ 
+.tomorrow-blue, code .function, code .python .decorator, code .python .title, code .ruby .function .title, code .ruby .title .keyword, code .perl .sub, code .javascript .title, code .coffeescript .title {
+  color: #6699cc;
+}
+ 
+.tomorrow-purple, code .keyword, code .javascript .function {
+  color: #cc99cc;
+}
+ 
+pre code {
+  display: block;
+  padding: 0.5em;
+}
+ 
+code {
+  background: #2B2B2B;
+  color: #7f7f7f;
+  padding: 0.3em;
+}
+ 
+code.coffeescript .javascript,
+code.javascript .xml,
+code.tex .formula,
+code.xml .javascript,
+code.xml .vbscript,
+code.xml .css,
+code.xml .cdata {
+  opacity: 0.5;
+}
+
+
+
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #2b2b2b;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-title,
+.css .hljs-rules,
+.css .hljs-value,
+.aspectj .hljs-function,
+.css .hljs-function .hljs-preprocessor,
+.hljs-pragma {
+  color: #bababa;
+}
+
+.hljs-strongemphasis,
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-blockquote,
+.hljs-horizontal_rule,
+.hljs-number,
+.hljs-regexp,
+.alias .hljs-keyword,
+.hljs-literal,
+.hljs-hexcolor {
+  color: #6896ba;
+}
+
+.hljs-tag .hljs-value,
+.hljs-code,
+.css .hljs-class,
+.hljs-class .hljs-title:last-child {
+  color: #a6e22e;
+}
+
+.hljs-link_url {
+  font-size: 80%;
+}
+
+.hljs-emphasis,
+.hljs-strongemphasis,
+.hljs-class .hljs-title:last-child,
+.hljs-typename {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.ruby .hljs-class .hljs-keyword:first-child,
+.ruby .hljs-function .hljs-keyword,
+.hljs-function,
+.hljs-change,
+.hljs-winutils,
+.hljs-flow,
+.nginx .hljs-title,
+.tex .hljs-special,
+.hljs-header,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.hljs-tag .hljs-title,
+.hljs-value,
+.alias .hljs-keyword:first-child,
+.css .hljs-tag,
+.css .unit,
+.css .hljs-important {
+  color: #cb7832;
+}
+
+.hljs-function .hljs-keyword,
+.hljs-class .hljs-keyword:first-child,
+.hljs-aspect .hljs-keyword:first-child,
+.hljs-constant,
+.hljs-typename,
+.css .hljs-attribute {
+  color: #cb7832;
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-class .hljs-title,
+.hljs-aspect .hljs-title {
+  color: #b9b9b9;
+}
+
+.hljs-string,
+.css .hljs-id,
+.hljs-subst,
+.hljs-type,
+.ruby .hljs-class .hljs-parent,
+.hljs-built_in,
+.django .hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.django .hljs-filter .hljs-argument,
+.smalltalk .hljs-localvars,
+.smalltalk .hljs-array,
+.hljs-attr_selector,
+.hljs-pseudo,
+.hljs-addition,
+.hljs-stream,
+.hljs-envvar,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.hljs-prompt,
+.hljs-link_label,
+.hljs-link_url {
+  color: #e0c46c;
+}
+
+.hljs-comment,
+.hljs-javadoc,
+.hljs-annotation,
+.hljs-pi,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.tex .hljs-formula {
+  color: #7f7f7f;
+}
+
+.hljs-decorator {
+  color: #bab429;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata,
+.xml .php,
+.php .xml {
+  opacity: 0.5;
+}

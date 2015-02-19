@@ -1,0 +1,98 @@
+<template name="filterFile">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Filter File Example Code</h4>
+                </div>
+
+                <div class="modal-body">
+                    {{#markdown}}{{> codeFilter}}{{/markdown}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="codeFilter">
+  This Works Thanks to this Code.
+<pre><code><br>
+pdfStore = new FS.Store.GridFS("pdf", {<br>
+transformWrite: function(fileObj, readStream, writeStream) {<br>
+    gm(readStream, fileObj.name)<br>
+        .gravity('Center')<br>
+        .autoOrient()<br>
+        .stream()<br>
+        .pipe(writeStream);<br>
+    }<br>
+});<br>
+   //FSCollection Declatarion<br>
+PdfFile = new FS.Collection("PdfFile", {<br>
+    stores: [pdfStore],<br>
+    filter: {<br>
+        maxSize: 2097152, //in bytes<br>
+        allow: {<br>
+            contentTypes: ['application/pdf'],<br>
+            extensions: ['pdf']<br>
+        },<br>
+        onInvalid: function (message) {<br>
+            if(Meteor.isClient){<br>
+                alert(message);<br>
+            } else{<br>
+                console.warn(message);<br>
+            }<br>
+        }<br>
+    }<br>
+});<br>
+ </code></pre><br>
+
+ On this Example im using the *transformWrite* function thanks to the cfs:graphicsmagick package.
+
+ *What does transforWrite?*
+ *transformWrite is a function that changes the file type*
+
+ give it a try.
+
+<pre><code>meteor add cfs:graphicsmagick package.</code></pre><br>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
