@@ -3,10 +3,12 @@
 </head>
 
 <template name="layout">
-  <div class="container">
-    {{> head}}
-    <div id="main" class="row-fluid">
-      {{> yield}}
-    </div>
-  </div>
+{{> yield}}
+<div id="footer" class="container">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="navbar-inner navbar-content-center">
+            <p class="text-muted credit"> This is not a Package made by me This is a Package made by <a href="https://github.com/aldeed">@Aldeed</a>  & <a href="https://github.com/raix">@raix </a>.</p>
+        </div>
+    </nav>
+</div>
 </template>

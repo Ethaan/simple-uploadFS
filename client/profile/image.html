@@ -1,9 +1,16 @@
 
 <template name="image">
-	<img src="{{this.url}}"><br><br>
-    <span> Current URL {{this.url}} of the File</span><br>
-    <span> Current Extension {{this.extension}} of the File</span><br>
-    <span> Current Type {{this.type}} of the File</span><br>
-    <span> Current Size {{this.size}} of the File</span><br>
-    <button type="submit" id="deleteImageUser">Delete this image </button><br>
+	<div id="showModalProgress"><a href='#'>I just a Progress bar how it works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
+	  <div class="row">
+        <div class="col-xs-6 col-sm-3 col-md-3 well rowCell">
+            <img id="imagesUser" src="{{this.url}}"><br><br>
+            <p class="text-muted">Current URL {{this.url}} of the File</p>
+            <p class="text-muted">Current Extension {{this.extension}} of the File</p>   
+            <p class="text-muted">Current Type {{this.type}} of the File</p>   
+            <p class="text-muted">Current Size {{this.size}} of the File</p> 
+             <a href="{{this.url download=true}}" class="btn btn-success">Download {{this.name}}</a>
+             <div id="showModalDownload"><a href='#'>How this download Button Works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
+          <button type="submit" id="deleteImageUser" class="btn btn-danger">Delete this image </button>             
+       </div>
+      </div>
 </template>

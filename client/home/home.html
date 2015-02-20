@@ -1,4 +1,42 @@
 <template name="home">
- <div class="well">
+	  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      Simple Demo made by <a href="https://github.com/Ethaan">@Ethan</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-center" >
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+  <div class="jumbotron">
+    <h1>Simple Example Of Meteor  <a href="https://github.com/CollectionFS/Meteor-CollectionFS">FSCollection Package</a></h1>      
+    <p>For those who whants to upload images into their Awesome Meteor App</p>
+    {{#if currentUser}}
+      <a href="/profile" class="btn btn-primary btn-lg active" role="button">Get Started</a><br><br>
+      {{> loginButtons}}
+    {{else}}
+    <span> To get Started First Creat an Account </span>
+       {{> loginButtons}}
+    {{/if}}    
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-3"> 
+      
+    </div>
+    <div class="col-md-3"> 
+      
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="clearfix visible-lg"></div>
+  </div>
 </div>
 </template>

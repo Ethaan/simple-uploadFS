@@ -1,0 +1,70 @@
+<template name="eventFile">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Event cfs:ui upload File Example Code</h4>
+                </div>
+
+                <div class="modal-body">
+                    {{#markdown}}{{> codeEvent}}{{/markdown}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="codeEvent">
+  First install the Package.
+  <pre><code>
+  $ meteor add cfs:ui
+</code></pre><br>
+
+Second Create a Dummy input file
+
+<pre><code><input type="file" id="exampleInput">
+</code></pre>
+
+Third Declare and Subscribe Create this folder <pre><code>appName/lib/collections.js</code></pre><br>
+  and create the FS.Collection.
+  <pre><code>
+  PostsImages = new FS.Collection("PostsImages", {<br>
+       stores: [new FS.Store.GridFS("PostsImages")]<br>
+});
+
+if(Meteor.isClient){<br>
+    Meteor.subscrie('PostImages')<br>
+}
+
+</code></pre><br>
+
+Four and last create this event.
+<pre><code><br>
+Template.example.events({<br>
+    'change #imageInput': FS.EventHandlers.insertFiles(PostsImages, {<br>
+      metadata: function (fileObj) {<br><br>
+        return {<br>
+          owner: Meteor.userId()<br>
+        };<br>
+      },<br>
+      after: function (error, fileObj) {<br>
+        console.log("Congratulations You just upload a new image =D");<br>
+      }<br>
+    })<br>
+  });<br>
+</code></pre><br>
+So what Really happend here, if you take close to the sytaxis <code>FS.EventHandlers.insertFiles(collection, [options])</code>.<br><br>
+First the collection option.<br>
+1.**collection:** An FS.Collection instance (in this case the PostImages Collection).<br><br>
+Now the Options.<br>
+2.**options:**<br>
+      2.1 **metadata:** (Optional) A function that takes an FS.File instance as its argument and returns an object containing the metadata to be added to the file object.<br>
+      2.2  **after:** (Optional) A callback function for the FS.Collection.insert call.<br><br>
+Also dont forget to take a look into the [README](https://github.com/CollectionFS/Meteor-cfs-ui)
+</template>

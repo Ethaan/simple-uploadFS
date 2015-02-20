@@ -1,0 +1,41 @@
+<template name="progressFile">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">ProgressBar File Example Code</h4>
+                </div>
+
+                <div class="modal-body">
+                    {{#markdown}}{{> codeProgress}}{{/markdown}}
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="codeProgress">
+  First install the Package.
+
+  <pre><code>
+  $ meteor add cfs:ui
+</code></pre><br>
+
+Second Put this on the **HTML**
+
+  <pre><code>
+  #each files<br>
+   #unless this.isUploaded<br>
+     FS.UploadProgressBar<br>
+   /unless<br>
+  /each<br>
+</code></pre><br>
+
+Also dont forget to take a look into the [README](https://github.com/CollectionFS/Meteor-cfs-ui)
+</template>
