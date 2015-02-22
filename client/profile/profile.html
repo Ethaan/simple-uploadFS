@@ -1,38 +1,41 @@
 <template name="profile">
+  <div class="container">
 	<!-- Here We check if the user is online-->
 	{{#if currentUser}}
-	<div class="well">
-    <h3> Simple Demo About The Great FSCollection Package</h3>
-  {{#each profilePicture}}
-  <img id="profile" src="{{this.url}}" class="img-circle" align="right">
-  {{/each}}
-  </div>
 	<!-- Here We check if the user upload an image {{showInputProfile}} line 46. profile.js -->
 	{{#if showInputProfile}}
-        <div class="centerProfile">
-          <div class="well">Here We are handle Simple upload events</div>
-          <p class="text-danger">On this input only PDFs Are Accepted</p><br>
+         <form>
+          <div class="form-group formsProfile">
+          <label for="inputPdf">On this input only PDFs Are Accepted</label>
           <input type="file" id="inputPdf"><br>
           <div id="showModalFilter"><a href='#'>How this Filter Works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
-          <p class="text-danger">Images Files(Any kind of file can be upload here).</p><br>
+          </div>
+        </form>
+        <form>
+          <div class="form-group formsProfile">
+          <label for="inputPng">Images Files(Any kind of file can be upload here)</label>
           <input type="file" id="inputPng"><br>
            <div id="showModalUpload"><a href='#'>How this File Upload Works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
-           <div class="well">On this Example We Use the Event Handler Creators from the <code>cfs:ui</code> Package</div>
+         </div>
+         </form>
+         <form>
+          <div class="form-group formsProfile">
+          <label for="inputPng">On this Example We Use the Event Handler Creators from the <strong>cfs:ui Package</strong></label>
            <input type="file" id="inputPng">
            <div id="showModalUploadCfs"><a href='#'>How this new Event Upload Works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
-        </div>
+         </div>
+         </form>
     <!-- Here We show the Images uploaded by the user {{showImagesUploadByUser}} line 54. profile.js -->
-    <div class="imagesProfileSection">
-     <h1>Actually this are yours files</h1>
-      <h3>Images Section </h3>
+    <ul class="rig">
+    <h1> Images Section </h1>
     {{#each showImagesUploadByUser}}
     {{#unless this.isUploaded}}
       {{> FS.UploadProgressBar bootstrap=true}}
     {{/unless}}
        {{> image}}
     {{/each}}
-
-    <h3>PDFs Section </h3>
+   </ul>
+   <h1> PDFS Section </h1>
     {{#each showPDFUploadByUser}}
     {{#unless this.isUploaded}}
       {{> FS.UploadProgressBar bootstrap=true}}
@@ -43,8 +46,8 @@
        {{> pdfTemplate}}
        {{/if}}
     {{/each}}
-  </div>
 	{{else}}
+
        <div class="center">
         <p class="text-muted">You should update an image to start.<span class="glyphicon glyphicon-picture" ></span><br><br>
               <input type="file" id="profileImage" ></p><br>
@@ -55,6 +58,7 @@
 {{else}}
 <span> This Template its only Accessible when you already have an account </span>
 {{/if}}
+</div>
 </template>
 
 

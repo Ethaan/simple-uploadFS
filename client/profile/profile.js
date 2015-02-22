@@ -105,5 +105,16 @@
         	return PdfFile.find({'metadata.ownerId':Meteor.userId()});
         }
   });
+//*******************************************************************************************************
+//*******************************************************************************************************
 
-     
+ //Rendered Function to show/hide footer
+  Template.profile.rendered = function(){
+     $(window).scroll(function() {
+        if ($(this).scrollTop()) {
+          $("#footer").hide();
+        }else{
+          $("#footer").show();
+        }
+      });
+    }

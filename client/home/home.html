@@ -2,7 +2,10 @@
 	  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      Simple Demo made by <a href="https://github.com/Ethaan">@Ethan</a>
+    Simple Demo made by <a href="https://github.com/Ethaan">@Ethan</a>
+       {{#each profilePicture}}
+  <img id="profile" src="{{this.url}}" class="img-circle" align="right">
+  {{/each}}
     </div>
     <div>
       <ul class="nav navbar-nav navbar-center" >

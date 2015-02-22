@@ -1,15 +1,15 @@
 
 <template name="pdfTemplate">
-    <div id="showModalProgress"><a href='#'>I just a Progress bar how it works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
-	  <div class="row">
-        <div class="col-xs-6 col-sm-3 col-md-3 well rowPdf">
-        	{{this.url}}
+  <ul class="rig columns-300">
+              <li>
+                  <div id="showModalProgress"><a href='#'>I just see a Progress bar how it works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
+                <h3>File Name {{this.name}}</h3>
             <p class="text-muted">Current Extension {{this.extension}} of the File</p>   
             <p class="text-muted">Current Type {{this.type}} of the File</p>   
             <p class="text-muted">Current Size {{this.size}} of the File</p> 
             <a href="{{this.url download=true}}" class="btn btn-success">Download {{this.name}}</a>
             <div id="showModalDownload"><a href='#'>How this download Button Works<span class="glyphicon glyphicon glyphicon-question-sign"></span></a></div>
-          <button type="submit" id="deletePdfUser" class="btn btn-danger">Delete this  </button>             
-       </div>
-      </div>
+          <button type="submit" id="deletePdfUser" class="btn btn-danger">Delete this  </button> 
+        </li>
+    </ul>            
 </template>
