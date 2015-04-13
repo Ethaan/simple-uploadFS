@@ -109,12 +109,12 @@
 //*******************************************************************************************************
 
  //Rendered Function to show/hide footer
-  Template.profile.rendered = function(){
-     $(window).scroll(function() {
+    Template.profie.onRendered(function(){
+      $(window).scroll(function() {
         if ($(this).scrollTop()) {
           $("#footer").hide();
         }else{
           $("#footer").show();
         }
       });
-    }
+    })
